@@ -1,6 +1,6 @@
 services:
   saleor-payment-app:
-    container_name: saleor-app
+    container_name: saleor-payment-app
     build:
       context: .
       dockerfile: Dockerfile
@@ -24,3 +24,9 @@ services:
       - traefik.http.routers.saleor-payment.tls.certresolver=letsencrypt
 
       - traefik.http.services.saleor-payment.loadbalancer.server.port=4000
+
+networks:
+  traefik-net:
+    external: true
+  saleor-ecommerce-network:
+    external: true
