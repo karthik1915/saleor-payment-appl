@@ -22,12 +22,9 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=4000
 ENV HOSTNAME=0.0.0.0
-ENV DATABASE_URL=file:data/payments.db
 
 RUN groupadd --system --gid 1001 nodejs \
-    && useradd --system --uid 1001 nextjs \
-    && mkdir -p /app/data \
-    && chown -R nextjs:nodejs /app
+    && useradd --system --uid 1001 nextjs 
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
