@@ -27,6 +27,7 @@ services:
 
 volumes:
   saleor-data:
+    driver: local
 
 networks:
   traefik-net:

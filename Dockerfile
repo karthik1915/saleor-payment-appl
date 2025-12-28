@@ -24,7 +24,9 @@ ENV PORT=4000
 ENV HOSTNAME=0.0.0.0
 
 RUN groupadd --system --gid 1001 nodejs \
-    && useradd --system --uid 1001 nextjs 
+    && useradd --system --uid 1001 nextjs \
+    && mkdir -p /app/data \
+    && chown -R 1001:1001 /app/data 
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
