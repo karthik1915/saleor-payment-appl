@@ -17,7 +17,7 @@ export const paymentAttempts = sqliteTable("payment_attempts", {
 });
 
 const client = createClient({
-  url: "file:data/payments.db", // This creates/uses the local file
+  url: process.env.DATABASE_URL!,
 });
 
 export const db = drizzle(client, { schema: { paymentAttempts } });
