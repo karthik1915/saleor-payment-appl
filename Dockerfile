@@ -35,7 +35,7 @@ COPY --from=builder /app/src/lib/database/instance.ts ./src/lib/database/instanc
 COPY --from=builder /app/next.config.ts ./next.config.ts
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/drizzle.config.ts ./drizzle.config.prod.ts
+COPY --from=builder /app/drizzle.config.ts ./drizzle.config.ts
 
 USER nextjs
 
