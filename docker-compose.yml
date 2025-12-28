@@ -10,3 +10,10 @@ services:
     volumes:
       - ./data:/app/data
     restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.saleor-payment.rule=Host(`ecommerce-payments.aahrbitx.in`)
+      - traefik.http.routers.saleor-payment.entrypoints=websecure
+      - traefik.http.routers.saleor-payment.tls=true
+      - traefik.http.routers.saleor-payment.tls.certresolver=letsencrypt
+      - traefik.http.services.saleor-payment.loadbalancer.server.port=4000
