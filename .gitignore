@@ -1,0 +1,70 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+.next
+out
+dist
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*.local
+.envfile
+.saleor-app-auth.json
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+.auth_token
+
+#editor
+!.vscode/mcp.json
+
+.idea
+
+# Sentry
+.sentryclirc
+
+# Env
+.env
+.env.local
+.env.production
+
+# SQLite / Drizzle
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Drizzle generated
+drizzle/meta
+drizzle/*.sql
+
+# Docker
+.dockerignore
+
+# OS
+.DS_Store
+Thumbs.db
