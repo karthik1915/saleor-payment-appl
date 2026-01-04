@@ -10,6 +10,9 @@ services:
     volumes:
       - saleor-data:/app/data
 
+    env_file:
+      - ./stack.env
+
     networks:
       - traefik-net
       - saleor-ecommerce-network

@@ -62,9 +62,8 @@ data/
 drizzle/meta
 drizzle/*.sql
 
-# Docker
-.dockerignore
-
 # OS
 .DS_Store
 Thumbs.db
+
+saleor-app-auth.json

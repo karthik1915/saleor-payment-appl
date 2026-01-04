@@ -16,22 +16,10 @@ export default createManifestHandler({
 
     const extensionsForSaleor3_22: AppExtension[] = [
       {
-        url: apiBaseURL + "/api/server-widget",
-        permissions: [],
-        mount: "PRODUCT_DETAILS_WIDGETS",
-        label: "Product Timestamps",
-        target: "WIDGET",
-        options: {
-          widgetTarget: {
-            method: "POST",
-          },
-        },
-      },
-      {
         url: iframeBaseUrl + "/client-widget",
         permissions: [],
         mount: "ORDER_DETAILS_WIDGETS",
-        label: "Order widget example",
+        label: "Order Payment Details",
         target: "WIDGET",
         options: {
           widgetTarget: {
@@ -52,18 +40,8 @@ export default createManifestHandler({
       name: "Payment Application",
       tokenTargetUrl: `${apiBaseURL}/api/register`,
       appUrl: iframeBaseUrl,
-      /**
-       * Set permissions for app if needed
-       * https://docs.saleor.io/docs/3.x/developer/permissions
-       */
-      permissions: [
-        /**
-         * Add permission to allow "ORDER_CREATED" / "ORDER_FILTER_SHIPPING_METHODS" webhooks registration.
-         *
-         * This can be removed
-         */
-        "HANDLE_PAYMENTS",
-      ],
+
+      permissions: ["HANDLE_PAYMENTS"],
       id: "payment.saleor.app",
       version: packageJson.version,
       /**

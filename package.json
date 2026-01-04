@@ -33,6 +33,7 @@
     "@saleor/macaw-ui": "1.4.1",
     "@urql/exchange-auth": "^1.0.0",
     "drizzle-orm": "^0.45.1",
+    "lucide-react": "^0.562.0",
     "nanoid": "^5.1.6",
     "next": "15.5.9",
     "razorpay": "^2.9.6",
